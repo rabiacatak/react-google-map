@@ -1,9 +1,6 @@
 import React from 'react'
 import smallBlueTrucker from "./smallBlueTrucker.png";
 
-
-
-
 class CustomGoogleMapWithMarker extends React.PureComponent {
     render() {
         const { compose, withProps, lifecycle } = require("recompose");
@@ -16,7 +13,7 @@ class CustomGoogleMapWithMarker extends React.PureComponent {
         const { MarkerWithLabel } = require("react-google-maps/lib/components/addons/MarkerWithLabel");
 
 
-        const CustomGoogleMap1 = compose(
+        const CustomGoogleMap = compose(
             withProps({
                 googleMapURL: "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY",
                 loadingElement: <div style={{ height: `100%` }} />,
@@ -52,7 +49,7 @@ class CustomGoogleMapWithMarker extends React.PureComponent {
             </GoogleMap>
         );
         return(
-            <CustomGoogleMap1 mapCallback={this.props.mapCallback}/>
+            <CustomGoogleMap mapCallback={this.props.mapCallback}/>
         )
     }
 }
